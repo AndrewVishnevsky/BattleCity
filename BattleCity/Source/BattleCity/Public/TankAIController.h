@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "Tank.h"
 #include "CoreMinimal.h"
 #include "AIController.h"
 #include "TankAIController.generated.h"
@@ -13,8 +14,10 @@ UCLASS()
 class BATTLECITY_API ATankAIController : public AAIController
 {
 	GENERATED_BODY()
-	
-	
+
+public:
+	ATank * GetContolledTank() const;
+		virtual void BeginPlay() override;
 	
 	
 };
