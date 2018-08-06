@@ -15,7 +15,7 @@ void ATankAIController::BeginPlay()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("AI possesing: %s"), *(ControlledTank->GetName()));
 	}
-	UE_LOG(LogTemp, Warning, TEXT("AIController Begin Play"));
+	
 }
 ATank * ATankAIController::GetContolledTank() const
 {
