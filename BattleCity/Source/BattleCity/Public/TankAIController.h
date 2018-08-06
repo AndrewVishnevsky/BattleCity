@@ -17,7 +17,11 @@ class BATTLECITY_API ATankAIController : public AAIController
 
 public:
 	ATank * GetContolledTank() const;
-		virtual void BeginPlay() override;
+	
+	virtual void BeginPlay() override;
+
+private:
+	ATank * GetPlayerTank() const;
 	
 	
 };
