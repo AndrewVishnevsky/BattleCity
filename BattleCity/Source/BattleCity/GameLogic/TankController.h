@@ -21,6 +21,8 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 
+	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+
 	// start the tank moving the barrel so that a shot would it where
 	// the crosshair intersects the world
 	void AimTowardsCrosshair();
