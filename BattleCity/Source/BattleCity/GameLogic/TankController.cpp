@@ -29,7 +29,20 @@ void ATankController::Tick(float DeltaTime)
 
 bool ATankController::GetSightRayHitLocation(FVector& OutHitLocation) const
 {
-	OutHitLocation = FVector(1.0);
+	
+	//find crosshair in pixel 
+	int32 ViewportSizeX, ViewportSizeY;
+	GetViewportSize(ViewportSizeX, ViewportSizeY);
+	auto ScreenLocation = FVector2D(ViewportSizeX*CrossHairXLocation, ViewportSizeY*CrossHairYLocation);
+	
+	//"de-project" the screen position
+	FVector CameraWorldPos;
+	FVector WorldDirection;
+	if (DeprojectScreenPositionToWorld(ScreenLocation.X, ScreenLocation.Y, CameraWorldPos, WorldDirection))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *WorldDirection.ToString());
+	}
+		//line trace along that look direction
 	return true;
 }
 
@@ -46,7 +59,7 @@ void ATankController::AimTowardsCrosshair()
 	FVector HitLocation; // Out parameter
 	if (GetSightRayHitLocation(HitLocation))
 	{
-		UE_LOG(LogTemp, Warning, TEXT("HitLocation: %s"), *HitLocation.ToString());
+		//UE_LOG(LogTemp, Warning, TEXT("Look direction: %s"), *HitLocation.ToString());
 		//Get world location if linetrace through crosshair
 		//if it hits the landscape
 			// TODO Tell controlled tank to aim at this point

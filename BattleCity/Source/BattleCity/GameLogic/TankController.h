@@ -15,16 +15,20 @@ class BATTLECITY_API ATankController : public APlayerController
 	GENERATED_BODY()
 	
 public:
-	ATank * GetContolledTank() const;
+	
 	
 	virtual void BeginPlay() override;
 
 	virtual void Tick(float DeltaTime) override;
-
+private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
-
+	ATank * GetContolledTank() const;
 	// start the tank moving the barrel so that a shot would it where
 	// the crosshair intersects the world
 	void AimTowardsCrosshair();
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5;
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333;
 
 };
