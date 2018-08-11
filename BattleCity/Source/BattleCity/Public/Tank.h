@@ -15,6 +15,10 @@ class BATTLECITY_API ATank : public APawn
 
 public:
 	void AimAt(FVector HitLocation);
+	
+
+	UFUNCTION(BlueprintCallable, Category=Setup)
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
 protected:
 	// Called when the game starts or when spawned
