@@ -7,8 +7,9 @@
 #include "TankAimingComponent.generated.h"
 
 
-class UTankBarrel; //Forward declarations
+class UTankBarrel; 
 
+//Hold param for properies
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLECITY_API UTankAimingComponent : public UActorComponent
 {
@@ -22,7 +23,7 @@ public:
 	// Called every frame
 	
 	void AimAt(FVector HitLocation, float LaunchSpeed);
-	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+	void SetBarrelReference(UTankBarrel* BarrelToSet);
 
 protected:
 	
