@@ -8,7 +8,7 @@
 
 
 class UTankBarrel; 
-
+class ATank;
 //Hold param for properies
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLECITY_API UTankAimingComponent : public UActorComponent
