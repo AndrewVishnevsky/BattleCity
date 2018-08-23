@@ -9,6 +9,7 @@
 /**
  * 
  */
+class ATank;
 UCLASS()
 class BATTLECITY_API ATankController : public APlayerController
 {
