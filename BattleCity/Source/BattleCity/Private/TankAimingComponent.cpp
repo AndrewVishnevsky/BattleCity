@@ -2,12 +2,15 @@
 
 
 #include "TankAimingComponent.h"
+<<<<<<< HEAD
 #include "TankBarrel.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
+=======
+>>>>>>> parent of 56cee65... BluprintSpawnableComponent()
 #include "Components/StaticMeshComponent.h"
-
+#include "Kismet/GameplayStatics.h"
 
 
 // Sets default values for this component's properties
@@ -67,7 +70,7 @@ void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
 	auto BarrelRotator = Barrel->GetForwardVector().Rotation();
 	auto AimAsRotator = AimDirection.Rotation();
 	auto DeltaRotator = AimAsRotator - BarrelRotator;
-	
+	UE_LOG(LogTemp, Warning, TEXT("AimAsRotator: %s"), *DeltaRotator.ToString());
 	
 	Barrel->Elevate(5); //TODO remove number
 }
